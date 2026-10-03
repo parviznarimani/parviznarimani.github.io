@@ -1,0 +1,276 @@
+/* =========================================================
+   HERO LAYOUT
+   ========================================================= */
+
+.hero {
+    min-height: 100svh;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        0.9fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding-top: 135px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   NAME GRADIENT
+   ========================================================= */
+
+.hero h1 span {
+    color: transparent;
+
+    background:
+        linear-gradient(
+            100deg,
+            #fff,
+            #9bd5ff,
+            #aa91ff,
+            #fff
+        );
+
+    background-size: 220%;
+
+    background-clip: text;
+
+    animation:
+        shine
+        8s
+        linear
+        infinite;
+}
+
+
+@keyframes shine {
+
+    to {
+        background-position: 220%;
+    }
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
+
+.hero-actions {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   HERO ARTWORK
+   ========================================================= */
+
+.hero-art {
+    position: relative;
+
+    height: 520px;
+
+    display: grid;
+
+    place-items: center;
+}
+
+
+/* =========================================================
+   ORBS
+   ========================================================= */
+
+.orb {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(2px);
+}
+
+
+/* Main Orb */
+
+.o1 {
+    width: 260px;
+    height: 260px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #eafaff,
+            #5ca9ff 10%,
+            #3b218f 42%,
+            #080b12 72%
+        );
+
+    box-shadow:
+        0 0 80px #5ea8ff55;
+
+    animation:
+        float
+        6s
+        ease-in-out
+        infinite;
+}
+
+
+/* Outer Orbital Ring */
+
+.o2 {
+    width: 390px;
+    height: 390px;
+
+    border:
+        1px solid
+        #8edaff33;
+
+    animation:
+        spin
+        18s
+        linear
+        infinite;
+}
+
+
+/* Elliptical Orbit */
+
+.orbit {
+    width: 470px;
+    height: 180px;
+
+    border:
+        1px solid
+        #a98aff44;
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-20deg);
+
+    animation:
+        spin2
+        14s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   HERO FLOATING CARD
+   ========================================================= */
+
+.hero-card {
+    position: absolute;
+
+    right: 4%;
+    bottom: 12%;
+
+    padding:
+        16px
+        18px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.15em;
+
+    line-height: 1.7;
+}
+
+
+.hero-card b {
+    color: var(--cyan);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes float {
+
+    50% {
+        transform:
+            translateY(-16px);
+    }
+}
+
+
+@keyframes spin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@keyframes spin2 {
+
+    to {
+        transform:
+            rotate(340deg);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    /* Stack Hero Content */
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Reduce Artwork Height */
+
+    .hero-art {
+        height: 360px;
+    }
+
+
+    /* Reduce Main Orb */
+
+    .o1 {
+        width: 190px;
+        height: 190px;
+    }
+
+
+    /* Reduce Outer Orb */
+
+    .o2 {
+        width: 290px;
+        height: 290px;
+    }
+
+
+    /* Reduce Elliptical Orbit */
+
+    .orbit {
+        width: 330px;
+    }
+
+
+    /* Reposition Floating Card */
+
+    .hero-card {
+        right: 8%;
+    }
+}
