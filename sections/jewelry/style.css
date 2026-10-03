@@ -1,0 +1,257 @@
+/* =========================================================
+   JEWELRY HEADER
+   ========================================================= */
+
+.jewelry-head {
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        0.9fr;
+
+    gap: 60px;
+
+    align-items: end;
+}
+
+
+/* =========================================================
+   HORIZONTAL GALLERY
+   ========================================================= */
+
+.jewelry-scroll {
+    display: flex;
+
+    gap: 16px;
+
+    padding: 35px 0 12px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+}
+
+
+/* =========================================================
+   JEWELRY CARD
+   ========================================================= */
+
+.jewel {
+    position: relative;
+
+    flex:
+        0 0
+        min(72vw, 500px);
+
+    height: 520px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding: 24px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius: 28px;
+
+    background-size: cover;
+
+    scroll-snap-align: start;
+}
+
+
+/* =========================================================
+   CARD GRADIENT OVERLAY
+   ========================================================= */
+
+.jewel::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            #05070bd9
+        );
+}
+
+
+/* Keep Content Above Overlay */
+
+.jewel > * {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.jewel > span {
+    align-self: flex-start;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.jewel h3 {
+    margin: 4px 0;
+
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   CARD CATEGORY
+   ========================================================= */
+
+.jewel small {
+    color: #c3cedd;
+}
+
+
+/* =========================================================
+   CARD 01 — VISUAL IDENTITY
+   ========================================================= */
+
+.j1 {
+    background:
+        radial-gradient(
+            circle at 60% 30%,
+            #e5cda3 0 2%,
+            #7a5c35 7%,
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #24201c,
+            #090a0d 60%
+        );
+}
+
+
+/* =========================================================
+   CARD 02 — PRODUCT STORYTELLING
+   ========================================================= */
+
+.j2 {
+    background:
+        radial-gradient(
+            circle at 45% 38%,
+            #fff1cf 0 2%,
+            #8d7145 8%,
+            transparent 26%
+        ),
+        linear-gradient(
+            135deg,
+            #16191f,
+            #08090c
+        );
+}
+
+
+/* =========================================================
+   CARD 03 — LUXURY CONTENT
+   ========================================================= */
+
+.j3 {
+    background:
+        radial-gradient(
+            circle at 65% 30%,
+            #dcecff 0 2%,
+            #8071a7 8%,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #1b1722,
+            #07080b
+        );
+}
+
+
+/* =========================================================
+   CARD 04 — NAMING & NARRATIVE
+   ========================================================= */
+
+.j4 {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #fff0c5 0 2%,
+            #876e48 8%,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #201d18,
+            #08090b
+        );
+}
+
+
+/* =========================================================
+   GALLERY NOTE
+   ========================================================= */
+
+.jewelry-note {
+    color: #657286;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.jewelry-scroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+
+.jewelry-scroll::-webkit-scrollbar-thumb {
+    background: #ffffff30;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* Stack Header */
+
+    .jewelry-head {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Resize Jewelry Cards */
+
+    .jewel {
+        height: 430px;
+
+        flex-basis: 84vw;
+    }
+}
