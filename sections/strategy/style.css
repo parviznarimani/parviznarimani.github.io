@@ -1,0 +1,147 @@
+/* =========================================================
+   STRATEGY CONTAINER
+   ========================================================= */
+
+.strategy-wrap {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        0.85fr;
+
+    gap: 55px;
+
+    padding:
+        clamp(
+            30px,
+            6vw,
+            68px
+        );
+
+    background:
+        radial-gradient(
+            500px 260px at 85% 10%,
+            #6a48ff24,
+            transparent 70%
+        ),
+        #ffffff05;
+}
+
+
+/* =========================================================
+   STRATEGY CAPABILITIES
+   ========================================================= */
+
+.strategy-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 30px;
+}
+
+
+/* Capability Tag */
+
+.strategy-tags span {
+    padding:
+        7px
+        10px;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius: 999px;
+
+    color: #c4cede;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STRATEGY GRAPHIC
+   ========================================================= */
+
+.strategy-graphic {
+    display: grid;
+
+    place-items: center;
+}
+
+
+/* =========================================================
+   STRATEGY AXIS
+   ========================================================= */
+
+.axis {
+    width: 100%;
+
+    display: grid;
+
+    gap: 16px;
+}
+
+
+/* Axis Stage */
+
+.axis b {
+    font-size: 12px;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* Axis Line */
+
+.axis i {
+    position: relative;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            transparent
+        );
+}
+
+
+/* Axis Indicator */
+
+.axis i::after {
+    content: "";
+
+    position: absolute;
+
+    top: -4px;
+    left: 45%;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        var(--cyan);
+
+    box-shadow:
+        0 0 14px
+        var(--cyan);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .strategy-wrap {
+        grid-template-columns: 1fr;
+    }
+}
