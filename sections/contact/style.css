@@ -1,0 +1,113 @@
+/* =========================================================
+   CONTACT BOX
+   ========================================================= */
+
+.contact-box {
+    padding:
+        clamp(
+            35px,
+            7vw,
+            80px
+        );
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            600px 280px at 80% 0%,
+            #5ea8ff20,
+            transparent 70%
+        ),
+        #ffffff05;
+}
+
+
+/* =========================================================
+   CONTACT DESCRIPTION
+   ========================================================= */
+
+.contact-box .lead {
+    margin: auto;
+}
+
+
+/* =========================================================
+   PROFESSIONAL LINKS
+   ========================================================= */
+
+.contact-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+
+/* Individual Link */
+
+.contact-links a {
+    padding: 10px 13px;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius: 12px;
+
+    color: #dce6f5;
+
+    font-size: 12px;
+}
+
+
+/* Link Hover */
+
+.contact-links a:hover {
+    background: #ffffff0c;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.contact footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 80px;
+    padding-top: 24px;
+
+    border-top:
+        1px solid
+        var(--line);
+
+    color: #697587;
+
+    font-size: 11px;
+}
+
+
+.contact footer span {
+    float: right;
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .contact footer {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+}
