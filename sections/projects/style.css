@@ -1,0 +1,151 @@
+/* =========================================================
+   PROJECTS GRID
+   ========================================================= */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-top: 48px;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+   ========================================================= */
+
+.project-card {
+    min-height: 390px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 27px;
+
+    transition: 0.3s;
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+   ========================================================= */
+
+.project-card small {
+    margin-top: 30px;
+
+    color: #78869a;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+   ========================================================= */
+
+.project-card h3 {
+    margin: 7px 0;
+
+    font-size: 27px;
+}
+
+
+/* =========================================================
+   PROJECT DESCRIPTION
+   ========================================================= */
+
+.project-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PROJECT LINK
+   ========================================================= */
+
+.project-card > span {
+    margin-top: auto;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PROGRESS INDICATOR
+   ========================================================= */
+
+.progress {
+    --p: 50;
+
+    position: relative;
+
+    width: 110px;
+    height: 110px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--blue) calc(var(--p) * 1%),
+            #ffffff10 0
+        );
+}
+
+
+/* Inner Circle */
+
+.progress::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border-radius: 50%;
+
+    background: #0b0f16;
+}
+
+
+/* Progress Percentage */
+
+.progress b {
+    z-index: 1;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.projects-description strong { color:var(--text); font-weight:650; }
+.project-card h3 { margin:25px 0 10px; }
+.project-card-footer { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-top:auto; padding-top:24px; }
+.project-card-footer > span:first-child { font-size:12px; padding-bottom:8px; }
+.project-card-footer .project-percentage { font-size:clamp(80px,8vw,108px); font-weight:750; line-height:1; letter-spacing:-.03em; color:rgba(139,188,215,.22); white-space:nowrap; }
+
+.project-percentage { display:inline-flex; align-items:baseline; flex-shrink:0; }
+.project-percentage .progress-number,
+.project-percentage .progress-unit { background:linear-gradient(to bottom,rgba(147,210,238,.65) 0%,rgba(116,174,204,.34) 48%,rgba(116,174,204,.02) 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.project-percentage .progress-unit { font-size:.34em; margin-left:2px; }
+.project-card-footer > span:first-child { color:#a8f6f3; text-shadow:0 0 7px #54e5db80,0 0 18px #54e5db55; }
+.project-card:hover .project-card-footer > span:first-child { text-shadow:0 0 8px #54e5dbb0,0 0 24px #54e5db80; }
+@media(min-width:801px) and (max-width:1100px) { .project-card-footer { flex-wrap:wrap; } .project-percentage { margin-left:auto; } }
