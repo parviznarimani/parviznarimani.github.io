@@ -1,0 +1,158 @@
+/* =========================================================
+   CONTACT BOX
+   ========================================================= */
+
+.contact-box {
+    padding:
+        clamp(
+            35px,
+            7vw,
+            80px
+        );
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            600px 280px at 80% 0%,
+            #5ea8ff20,
+            transparent 70%
+        ),
+        #ffffff05;
+}
+
+
+/* =========================================================
+   CONTACT DESCRIPTION
+   ========================================================= */
+
+.contact-box .lead {
+    margin: auto;
+}
+
+
+/* =========================================================
+   PROFESSIONAL LINKS
+   ========================================================= */
+
+.contact-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+
+/* Individual Link */
+
+.contact-links a,
+.contact-profile {
+    padding: 10px 13px;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius: 12px;
+
+    color: #dce6f5;
+
+    font-size: 12px;
+}
+
+
+/* Link Hover */
+
+.contact-links a:hover {
+    background: #ffffff0c;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.contact footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 80px;
+    padding-top: 24px;
+
+    border-top:
+        1px solid
+        var(--line);
+
+    color: #697587;
+
+    font-size: 11px;
+}
+
+
+.contact footer span {
+    float: right;
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .contact footer {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+}
+
+.contact footer { flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+.contact footer span { float: none; }
+
+/* Equal contact targets across desktop and mobile layouts. */
+.contact-links a { display:inline-flex; align-items:center; justify-content:center; box-sizing:border-box; flex:0 0 140px; width:140px; height:48px; padding:10px 13px; }
+
+/* A traveling highlight visits each contact button in sequence. */
+@property --contact-glow-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+.contact-links a { position:relative; isolation:isolate; }
+.contact-links a::before,
+.contact-links a::after {
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:inherit;
+    padding:2px;
+    background:conic-gradient(from var(--contact-glow-angle),transparent 0deg,transparent 230deg,#57ddd955 285deg,#a5fff5 330deg,transparent 360deg);
+    -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    pointer-events:none;
+    opacity:0;
+    animation:contact-glow-tour 12s linear infinite;
+}
+.contact-links a::after { inset:-5px; padding:5px; filter:blur(5px); z-index:-1; }
+.contact-links a:nth-child(2)::before,
+.contact-links a:nth-child(2)::after { animation-delay:4s; }
+.contact-links a:nth-child(3)::before,
+.contact-links a:nth-child(3)::after { animation-delay:8s; }
+@keyframes contact-glow-tour {
+    0% { --contact-glow-angle:0deg; opacity:0; }
+    4% { opacity:1; }
+    29% { opacity:1; }
+    33.333% { --contact-glow-angle:360deg; opacity:0; }
+    100% { --contact-glow-angle:360deg; opacity:0; }
+}
+@media(prefers-reduced-motion:reduce) {
+    .contact-links a::before,.contact-links a::after { animation:none; opacity:0; }
+}
