@@ -1,0 +1,1 @@
+My research publications focus on **building intelligence from data**, exploring machine learning, symbolic and computational approaches that transform complex datasets into interpretable models, predictive insights and data-driven decision systems across **engineering and business management**.
