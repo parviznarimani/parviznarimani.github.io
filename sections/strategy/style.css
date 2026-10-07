@@ -1,0 +1,103 @@
+/* =========================================================
+   STRATEGY CONTAINER
+   ========================================================= */
+
+.strategy-wrap {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        0.85fr;
+
+    gap: 55px;
+
+    padding:
+        clamp(
+            30px,
+            6vw,
+            68px
+        );
+
+    background:
+        radial-gradient(
+            500px 260px at 85% 10%,
+            #6a48ff24,
+            transparent 70%
+        ),
+        #ffffff05;
+}
+
+
+/* =========================================================
+   STRATEGY CAPABILITIES
+   ========================================================= */
+
+.strategy-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 30px;
+}
+
+
+/* Capability Tag */
+
+.strategy-tags span {
+    padding:
+        7px
+        10px;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius: 999px;
+
+    color: #c4cede;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STRATEGY GRAPHIC
+   ========================================================= */
+
+.strategy-graphic {
+    display: grid;
+
+    place-items: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .strategy-wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+.strategy-content { min-width:0; }
+.strategy-content .display { font-size:clamp(36px,4.4vw,58px); line-height:1.08; }
+.strategy-description { font-size:17px; line-height:1.8; }
+.strategy-description strong { color:var(--text); font-weight:650; }
+.strategy-graphic { min-width:0; background:radial-gradient(ellipse at 80% 20%,#0a758940,transparent 70%); border-radius:24px; }
+.growth-chart { display:block; width:100%; overflow:visible; }
+.growth-grid { stroke:#5ccadd; stroke-width:.5; opacity:.1; fill:none; }
+.growth-bars { fill:url(#growth-bars); }
+.growth-bars rect { transform-box:fill-box; transform-origin:bottom; animation:market-bars 7s ease-in-out infinite; animation-delay:var(--delay); }
+.growth-line { fill:none; stroke:#4affec; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:100; animation:market-line 7s ease-in-out infinite; }
+.growth-halo { stroke-width:7; opacity:.7; }
+.growth-dots { fill:#befff8; stroke:#27dfdc; stroke-width:2; filter:drop-shadow(0 0 5px #35ffed); }
+.growth-end { fill:none; stroke:#61fff1; opacity:.35; transform-box:fill-box; transform-origin:center; animation:market-pulse 3s ease-out infinite; }
+@keyframes market-line { 0% {stroke-dashoffset:100;opacity:.25} 48%,88% {stroke-dashoffset:0;opacity:1} 100% {stroke-dashoffset:0;opacity:.25} }
+@keyframes market-bars { 0%,100% {transform:scaleY(.88);opacity:.5} 50% {transform:scaleY(1);opacity:1} }
+@keyframes market-pulse { from {transform:scale(.6);opacity:.65} to {transform:scale(2);opacity:0} }
+@media(max-width:800px) { .strategy-wrap {gap:28px;} .growth-chart {max-width:500px;} }
