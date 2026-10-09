@@ -1,10 +1,17 @@
-<img align="right" src="sections/hero/medias/parviznarimani-small.png" alt="Parviz Narimani" width="180">
+<table>
+<tr>
+<td width="78%" valign="middle">
+<h1>Parviz Narimani</h1>
+<p><strong>Last updated: October 2026 · Website version: 3</strong></p>
+<p><strong>Strategy · Research · Machine Learning · Jewelry</strong></p>
+</td>
+<td width="22%" align="right" valign="middle">
+<img src="sections/hero/medias/parviznarimani-small.png" alt="Parviz Narimani" width="160">
+</td>
+</tr>
+</table>
 
-# Parviz Narimani
-
-**Last updated: October 2026 · Website version: 3**
-
-**Strategy · Research · Machine Learning · Jewelry**
+---
 
 I work at the intersection of **strategic thinking and design thinking**, taking a multidisciplinary approach to extend the intelligence of **machine learning and data analytics** across engineering, research, and business management. Alongside this technical and strategic work, **jewelry and gold manufacturing** is both my profession and a long-standing passion—a field where my experience in **business management, strategy, and digital transformation** comes together with creativity, craftsmanship, and technology.
 
@@ -61,45 +68,12 @@ Every folder below contains its own README.md with local file inventory and edit
 │   │   ├── project1/
 │   │   ├── project2/
 │   │   └── project3/
-│   ├── publications/
-│   │   ├── medias/
-│   │   └── papers/
-│   │       ├── aluminum-grinding/
-│   │       │   └── medias/
-│   │       ├── automated-machining/
-│   │       │   └── medias/
-│   │       ├── concrete-block-layer/
-│   │       │   └── medias/
-│   │       ├── lpbf-heat-treatment/
-│   │       │   └── medias/
-│   │       ├── lpbf-parameters/
-│   │       │   └── medias/
-│   │       ├── reclaimed-asphalt/
-│   │       │   └── medias/
-│   │       ├── st37-grinding/
-│   │       │   └── medias/
-│   │       └── steel-grinding/
-│   │           └── medias/
 │   ├── research/
 │   │   └── medias/
 │   └── strategy/
 │       └── medias/
 └── pages/
-    ├── blog/
-    │   ├── Post1[2026-10-09]/
-    │   │   └── medias/
-    │   ├── Post2[2026-10-09]/
-    │   │   └── medias/
-    │   ├── Post3[2026-10-09]/
-    │   │   └── medias/
-    │   ├── Post4[2026-10-09]/
-    │   │   └── medias/
-    │   ├── Post5[2026-10-09]/
-    │   │   └── medias/
-    │   ├── Post6[2026-10-09]/
-    │   │   └── medias/
-    │   └── _template/
-    │       └── medias/
+    ├── blog/                  # Blog post content and build script
     ├── jewelry/
     │   └── medias/
     ├── project-1/
@@ -108,7 +82,7 @@ Every folder below contains its own README.md with local file inventory and edit
     │   └── medias/
     ├── project-3/
     │   └── medias/
-    └── publications/
+    └── publications/          # Publication content, paper pages and PDFs
 ```
 
 Homepage sections have their own `section.html` and `style.css`. Keep section images and other media in their respective `medias/` folders.
@@ -172,12 +146,12 @@ Keep filenames, capitalization, and paths exact. Use optimized images and meanin
 
 ## Publications
 
-Publication records are stored in `sections/publications/papers.json`. Run the build after changing records. The current collection includes seven journal articles and one preprint.
+Publication records are stored in `pages/publications/papers.json`. Run the build after changing records. The current collection includes seven journal articles and one preprint.
 
 Each record supplies bibliographic information, an abstract, a slug, and optional DOI/dataset links. Inspect an existing record for the field structure before adding one. Place its PDF at:
 
 ```text
-sections/publications/papers/<slug>/medias/paper.pdf
+pages/publications/papers/<slug>/medias/paper.pdf
 ```
 
 The build generates an individual reading page alongside that PDF.
@@ -186,7 +160,7 @@ The build generates an individual reading page alongside that PDF.
 - Every entry provides a local reading link and a PDF download.
 - Dataset buttons are not displayed in the current publication table.
 - Individual reading pages offer Download paper, Open on GPT, and a publisher or preprint link when available.
-- `sections/publications/universalScholarlyAnalysisPrompt.md` contains the editable scholarly analysis instructions. Open on GPT passes public links; visitors may need to attach files manually.
+- `pages/publications/universalScholarlyAnalysisPrompt.md` contains the editable scholarly analysis instructions. Open on GPT passes public links; visitors may need to attach files manually.
 - A green tick identifies a published journal article; it does not certify dataset quality or indexing.
 - Search and year filters enhance the static publication table.
 
