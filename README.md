@@ -1,15 +1,12 @@
-<table>
-<tr>
-<td width="78%" valign="middle">
-<h1>Parviz Narimani</h1>
-<p><strong>Last updated: October 2026 · Website version: 3</strong></p>
-<p><strong>Strategy · Research · Machine Learning · Jewelry</strong></p>
-</td>
-<td width="22%" align="right" valign="middle">
-<img src="sections/hero/medias/parviznarimani-small.png" alt="Parviz Narimani" width="160">
-</td>
-</tr>
-</table>
+<img align="right" src="sections/hero/medias/parviznarimani-small.png" alt="Parviz Narimani portrait" width="260">
+
+<p><img src="assets/readme-name.svg" alt="Parviz Narimani" width="440"></p>
+
+**Last updated: October 2026 · Website version: 3**
+
+**Strategy · Research · Machine Learning · Jewelry**
+
+<br clear="all">
 
 ---
 
