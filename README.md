@@ -1,8 +1,10 @@
-<img src="sections/hero/medias/parviznarimani-small.png" alt="Parviz Narimani" width="220">
-
-**Strategy · Research · Machine Learning · Jewelry**
+<img align="right" src="sections/hero/medias/parviznarimani-small.png" alt="Parviz Narimani" width="180">
 
 # Parviz Narimani
+
+**Last updated: October 2026 · Website version: 3**
+
+**Strategy · Research · Machine Learning · Jewelry**
 
 I work at the intersection of **strategic thinking and design thinking**, taking a multidisciplinary approach to extend the intelligence of **machine learning and data analytics** across engineering, research, and business management. Alongside this technical and strategic work, **jewelry and gold manufacturing** is both my profession and a long-standing passion—a field where my experience in **business management, strategy, and digital transformation** comes together with creativity, craftsmanship, and technology.
 
@@ -12,7 +14,7 @@ I work at the intersection of **strategic thinking and design thinking**, taking
 
 This repository contains my personal website: a responsive, static portfolio bringing together strategy, research, gold and jewelry, publications, and ongoing projects. It uses HTML, CSS, JavaScript, and a small Python build script. No npm dependencies, database, or application server are needed.
 
-The portrait above is a plain image. The website’s animated frame and visual effects are not included in this README.
+The portrait beside the title is a plain image. The website’s animated frame and visual effects are not included in this README.
 
 ## Website sections
 
@@ -22,50 +24,91 @@ The portrait above is a plain image. The website’s animated frame and visual e
 | About | “Building across disciplines” and four areas of focus |
 | Strategy | “Strategy is a pattern in decisions,” strategic interests, and an illustrative growth chart |
 | Research | “Intelligence by Design,” Generic ML, Ensemble / Stacking, and Symbolic ML |
-| Gold & Jewelry | “Eternal Light,” a three-image carousel, and a link to the future jewelry page |
+| Gold & Jewelry | “Eternal Light,” a three-image carousel, and a dedicated jewelry page with imagery, a transformation diagram and an action-plan download |
 | Ongoing projects | “Currently building,” three editable project cards, and progress percentages |
-| Connect | WhatsApp, Email, and LinkedIn |
+| Connect | WhatsApp, Email, LinkedIn, and Download CV |
+| Blog | Six source-linked articles, original covers, and editable post folders |
 
 The publications page contains separate tables for ongoing projects and published papers/preprints. Individual project and paper pages provide dedicated destinations. A custom 404 page offers a return link.
 
 ## Repository structure
 
+Every folder below contains its own README.md with local file inventory and editing guidance.
+
 ```text
 .
-├── index.html               # Generated main website
-├── 404.html                 # Generated custom error page
-├── build.py                 # Static page generator
+├── index.html
+├── 404.html
+├── build.py
 ├── README.md
-├── .nojekyll                # Serve the static files without Jekyll
-├── robots.txt               # Generated crawler instructions
-├── sitemap.xml              # Generated page URLs
+├── parviznarimaniMainLogo70X.png
+├── robots.txt
+├── sitemap.xml
+├── .nojekyll
 ├── assets/
-│   ├── site.css
-│   ├── enhancements.css
-│   └── site.js
+│   └── licenses/
 ├── sections/
-│   ├── hero/
 │   ├── about/
-│   ├── strategy/
-│   ├── research/
+│   │   └── medias/
+│   ├── contact/
+│   │   └── medias/
+│   ├── hero/
+│   │   └── medias/
 │   ├── jewelry/
+│   │   └── medias/
 │   ├── projects/
-│   │   ├── ongoingProjectsAbout.txt
+│   │   ├── medias/
 │   │   ├── project1/
 │   │   ├── project2/
 │   │   └── project3/
 │   ├── publications/
-│   │   ├── papers.json
-│   │   └── papers/<slug>/
-│   │       ├── index.html
-│   │       └── medias/paper.pdf
-│   └── contact/
+│   │   ├── medias/
+│   │   └── papers/
+│   │       ├── aluminum-grinding/
+│   │       │   └── medias/
+│   │       ├── automated-machining/
+│   │       │   └── medias/
+│   │       ├── concrete-block-layer/
+│   │       │   └── medias/
+│   │       ├── lpbf-heat-treatment/
+│   │       │   └── medias/
+│   │       ├── lpbf-parameters/
+│   │       │   └── medias/
+│   │       ├── reclaimed-asphalt/
+│   │       │   └── medias/
+│   │       ├── st37-grinding/
+│   │       │   └── medias/
+│   │       └── steel-grinding/
+│   │           └── medias/
+│   ├── research/
+│   │   └── medias/
+│   └── strategy/
+│       └── medias/
 └── pages/
-    ├── publications/index.html
-    ├── jewelry/index.html
-    ├── project-1/index.html
-    ├── project-2/index.html
-    └── project-3/index.html
+    ├── blog/
+    │   ├── Post1[2026-10-09]/
+    │   │   └── medias/
+    │   ├── Post2[2026-10-09]/
+    │   │   └── medias/
+    │   ├── Post3[2026-10-09]/
+    │   │   └── medias/
+    │   ├── Post4[2026-10-09]/
+    │   │   └── medias/
+    │   ├── Post5[2026-10-09]/
+    │   │   └── medias/
+    │   ├── Post6[2026-10-09]/
+    │   │   └── medias/
+    │   └── _template/
+    │       └── medias/
+    ├── jewelry/
+    │   └── medias/
+    ├── project-1/
+    │   └── medias/
+    ├── project-2/
+    │   └── medias/
+    ├── project-3/
+    │   └── medias/
+    └── publications/
 ```
 
 Homepage sections have their own `section.html` and `style.css`. Keep section images and other media in their respective `medias/` folders.
@@ -141,8 +184,9 @@ The build generates an individual reading page alongside that PDF.
 
 - Journal titles link to their DOI when available; otherwise they open the local reading page.
 - Every entry provides a local reading link and a PDF download.
-- Set `dataset_url` to the actual dataset repository URL to enable its button.
-- Missing dataset URLs display an unavailable button.
+- Dataset buttons are not displayed in the current publication table.
+- Individual reading pages offer Download paper, Open on GPT, and a publisher or preprint link when available.
+- `sections/publications/universalScholarlyAnalysisPrompt.md` contains the editable scholarly analysis instructions. Open on GPT passes public links; visitors may need to attach files manually.
 - A green tick identifies a published journal article; it does not certify dataset quality or indexing.
 - Search and year filters enhance the static publication table.
 
@@ -154,7 +198,7 @@ The intended repository is `parviznarimani/parviznarimani.github.io`.
 
 1. Run `python3 build.py` locally.
 2. Copy the contents of this website directory into the repository root. Do not nest them inside an extra `website` or `outputs` folder, and do not upload only a ZIP.
-3. Include `index.html`, `404.html`, `.nojekyll`, `assets/`, `sections/`, `pages/`, `robots.txt`, and `sitemap.xml`. Keep `build.py` and this README for maintenance. Skip macOS `.DS_Store` files.
+3. Include `index.html`, `404.html`, `.nojekyll`, `assets/`, `sections/`, `pages/`, `robots.txt`, and `sitemap.xml`, plus the root logo `parviznarimaniMainLogo70X.png`. Keep `build.py` and this README for maintenance. Skip macOS `.DS_Store` files.
 4. In repository **Settings → Pages**, choose **Deploy from a branch**, select the branch containing the files, and select **/ (root)**.
 5. Wait for the deployment to finish, then check the live homepage, images, contact links, paper downloads, and a nonexistent URL to verify the 404 page.
 
@@ -172,7 +216,7 @@ Crawler-compatible markup supports discovery but does not guarantee Google or Go
 
 ## Accessibility and interactions
 
-The website includes a skip link, semantic headings, keyboard focus styles, a mobile navigation toggle, and labeled carousel controls. Jewelry slides can be navigated using controls, arrow keys, and touch gestures. Reduced-motion preferences disable decorative animations. Core content and navigation remain present in generated HTML.
+The website includes a skip link, semantic headings, keyboard focus styles, a mobile navigation toggle, and labeled carousel controls. Jewelry slides can be navigated using controls, arrow keys, and touch gestures. Reduced-motion preferences disable CSS and canvas animations. Animated GIF artwork continues playing independently. Core content and navigation remain present in generated HTML.
 
 ## Maintenance checklist
 
@@ -183,7 +227,7 @@ The website includes a skip link, semantic headings, keyboard focus styles, a mo
 - Upload the changed sources and regenerated pages together.
 - Check the live site after deployment.
 
-The jewelry detail page is currently a placeholder. Expand its template in `build.py` when its content is ready. Project detail pages also provide starting points for future milestones and methodology.
+The jewelry page includes its model introduction, six-image slideshow, digital transformation diagram, downloadable action plan and a dedicated contact section. Project detail pages also provide starting points for future milestones and methodology.
 
 ## Contact
 
@@ -196,3 +240,21 @@ The jewelry detail page is currently a placeholder. Expand its template in `buil
 Born curious. Building with ❤️ since 1991.
 
 © Parviz Narimani
+
+## Animation attribution
+
+The portrait’s dotted Thinking animation adapts the composing/ribbon renderer from [Thinking Orbs by Jakub Antalik](https://github.com/Jakubantalik/thinking-orbs). Its MIT license is included in `assets/licenses/thinking-orbs-LICENSE.txt`.
+
+## Version 3 content guide
+
+- Current logo and favicon: `parviznarimaniMainLogo70X.png`.
+- Projects: Alvyn® Symbol (70%), Alvyn® Engine (30%), and SkyWings® (10%, Concept).
+- CV: `sections/contact/medias/ParvizNarimani_CV.pdf`.
+- Jewelry introduction: `pages/jewelry/jewelryDescription.txt`.
+- Jewelry diagram: `pages/jewelry/digitalTransformation.html`.
+- Jewelry artwork and action plan: `pages/jewelry/medias/`, including the four GIF icons and `applicationNote.pdf`.
+- Blog: `pages/blog/`. Copy `_template` to `Post7[YYYY-MM-DD]`, fill `title.txt`, `metadescription.txt`, and `mainText.txt`, and add a cover in `medias/`. Optional `sources.json` records references.
+
+Run `python3 pages/blog/build.py` from the website root to build the blog and regenerate the full site sitemap. This delegates to the shared build so other site pages remain listed. The six initial posts are dated October 9, 2026; their source publication dates are distinguished in article text. SVG covers are supported alongside PNG, JPEG, WebP and AVIF.
+
+Blog main text supports paragraphs, **bold**, H2 (`##`) and H3 (`###`) headings. It is not a full Markdown renderer. For detailed publishing instructions, see [the blog README](pages/blog/README.md).
