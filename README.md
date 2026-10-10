@@ -1,6 +1,6 @@
 <img align="right" src="sections/hero/medias/parviznarimani-small.png" alt="Parviz Narimani portrait" width="260">
 
-<p><img src="assets/readme-name.svg" alt="Parviz Narimani" width="440"></p>
+<p><img src="parviznarimaniMainLogo70X.png" alt="Parviz Narimani logo" width="70" height="70"></p>
 
 **Last updated: October 2026 · Website version: 3**
 
