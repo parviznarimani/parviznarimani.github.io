@@ -1,0 +1,29 @@
+# Parviz Narimani - robots.txt
+# Website: https://parviznarimani.github.io/
+
+# General search engine crawlers
+User-agent: *
+Allow: /
+
+# ChatGPT Search
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI GPTBot
+User-agent: GPTBot
+Allow: /
+
+# Google Search
+User-agent: Googlebot
+Allow: /
+
+# Google Image Search
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing Search and Microsoft Copilot
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://parviznarimani.github.io/sitemap.xml
