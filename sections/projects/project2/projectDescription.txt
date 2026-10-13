@@ -1,0 +1,1 @@
+A machine learning environment for data driven engineering workflows. The project connects data analysis and predictive modeling to turn complex datasets into useful insights for research and practical decision making.
