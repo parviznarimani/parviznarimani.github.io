@@ -1,0 +1,167 @@
+[
+  {
+    "slug": "lpbf-parameters",
+    "title": "Analytical and Machine Learning Framework for Predicting the Impact of LPBF Parameters on the Hardness of Inconel™ 718",
+    "date": "2025/09/19",
+    "journal": "Research Square",
+    "authors": [
+      "Mohsen Dehghanpour Abyaneh",
+      "Raffaella Sesana",
+      "Mohammad Sadegh Javadi",
+      "Parviz Narimani",
+      "Matteo Crachi",
+      "Antonio Caraviello"
+    ],
+    "doi": "10.21203/rs.3.rs-7648647/v1",
+    "kind": "preprint",
+    "volume": "",
+    "issue": "",
+    "firstpage": "",
+    "abstract": "In Laser Powder Bed Fusion, a layer-by-layer melting of metal powder takes place and is specifically suited to high-performance applications in advanced technologies using Inconel™ 718. ANOVA and hardness measurements identified relationships that cannot be predicted using conventional statistical methods. Particle Swarm Optimization and Genetic Algorithm were proposed to define the relationships between the input and output data. Although the mean accuracy was high (97% for Particle Swarm Optimization and 91% for Genetic Algorithm), the drawbacks were calculation variation and sensitivity to parameter changes. The prediction of hardness was then done using five regression models, such as Support Vector Machine, Gaussian Process Regression (GPR), Single-Layer and Deep-Layer Artificial Neural Network (ANN) , and Random Tree (RT). The low R² values were observed in the initial implementation with a mean accuracy of 90%. The linear method of optimizing output data increased R² values up to and beyond 0.9 with high average accuracy. GPR and single-layer ANN performed best in terms of training results. A rollback process was implemented on the test results. GPR and ANN displayed the best results with the highest R² (0.99) and MAPE (1.3%) values on the testing data, which proved them as the best solutions.",
+    "dataset_url": null
+  },
+  {
+    "slug": "reclaimed-asphalt",
+    "title": "Characterisation of structural performance and sustainability of hot mix asphalt mixtures containing RAP using Machine Learning",
+    "date": "2026/01/19",
+    "journal": "Australian Journal of Civil Engineering",
+    "authors": [
+      "Ali Jamshidi",
+      "Parviz Narimani",
+      "Rezwanul Haque",
+      "Mohd Rosli Mohd Hasan"
+    ],
+    "doi": "10.1080/14488353.2025.2609053",
+    "kind": "journal",
+    "volume": "",
+    "issue": "",
+    "firstpage": "",
+    "abstract": "This paper describes a new computational framework for characterising the effects of reclaimed asphalt pavement (RAP) parameters, sources and contents, on the structural perfor mance of hot mix asphalt, in terms of dynamic modulus (E*), of using machine learning (ML) techniques. The ML models were developed for five RAP content percentages (0%, 10%, 20%, 30%, and 40%) for three different sources. The ML models showed promising results with Taylor diagrams and R² values of 87% to 99% for all RAP sources and content levels. The results of pavement design using ML data showed the thicknesses of the asphalt mixture are slightly different depending on the RAP source. The same trend was found in the mixing and construction temperatures. Furthermore, analysis of sustainability showed that higher and stiffer RAP (higher E*) results in a more sustainable asphalt mixture because of lower thick nesses, and consequently lower aggregate requirements and CO₂ emissions, for all ML meth ods and fuel types. Lastly, the incorporation of higher RAP content from any sources, the use of ML methods, and the adoption of cleaner fuel types results in massive material savings, higher energy efficiency, and improved sustainability in asphalt mix production for all RAP sources.",
+    "dataset_url": null
+  },
+  {
+    "slug": "concrete-block-layer",
+    "title": "Digitalization of Analysis of a Concrete Block Layer Using Machine Learning as a Sustainable Approach",
+    "date": "2024/09/02",
+    "journal": "Sustainability",
+    "authors": [
+      "Parviz Narimani",
+      "Mohsen Dehghanpour Abyaneh",
+      "Marzieh Golabchi",
+      "Babak Golchin",
+      "Rezwanul Haque",
+      "Ali Jamshidi"
+    ],
+    "doi": "10.3390/su16177591",
+    "kind": "journal",
+    "volume": "16",
+    "issue": "17",
+    "firstpage": "7591",
+    "abstract": "The concrete block pavement (CBP) system has a surface layer consisting of concrete block pavers and joint sand over a bedding sand layer. The non-homogeneous nature of the surface course of CBP , along with different laying patterns and shapes of block pavers, makes the analysis of CBP cumbersome. In this study , the surface course of CBP was modeled based on the slab action of the block pavers and joint sand, which are connected together in full contact. Four different laying patterns, including herringbone, stretcher, parquet, and square, were modeled using a finite element model. The elastic moduli of the block pavers varied from 2500 MPa to 45,000 MPa, with thicknesses ranging from 60 mm to 120 mm. As a result, modeling of CBP based on slab action can be considered a realistic strategy . In addition, a dataset was created based on quantitative inputs, e.g., elastic modulus and thickness of the block pavers, and qualitative input, i.e., block laying patterns. The approaches of machine learning adopted were support vector regression, Gaussian process regression, single-layer and deep artificial neural networks, and least squares boosting to implement prediction approach based on input and output. The analyses of statistical accuracy of all five machine learning methods showed high accuracy; however, the Gaussian process and deep artificial neural network methods resulted in the most accurate outputs and are recommended for further studies. Based on the machine learning models, digitalization is achieved through the development of simple, user-friendly software for electronic devices in order to perform a preliminary analysis of different laying patterns of CBP . Such a platform may result in less laboratory work and boosts the level of sustainability in concrete block pavement technology .",
+    "dataset_url": null
+  },
+  {
+    "slug": "aluminum-grinding",
+    "title": "Enhancing Grinding Efficiency in Aluminum Alloys: An Ensemble-Stacking and Single Machine Learning Framework for Predicting Surface Roughness with SHAP-based interpretability",
+    "date": "2026/04/10",
+    "journal": "The International Journal of Advanced Manufacturing Technology",
+    "authors": [
+      "Mohsen Dehghanpour Abyaneh",
+      "Mohammad Sadegh Javadi",
+      "Parviz Narimani",
+      "Marzieh Golabchi",
+      "Raffaella Sesana",
+      "Mohammadjafar Hadad"
+    ],
+    "doi": "10.1007/s00170-026-17594-9",
+    "kind": "journal",
+    "volume": "145",
+    "issue": "",
+    "firstpage": "4599",
+    "abstract": "As mechanical engineering becomes more data-driven, accurate and explainable prediction models are increasingly required. This study applied benchmarks for data-driven strategies and conducted a comprehensive analysis, using an 84-run grinding dataset on aluminum alloy 6061, with the surface roughness as the output variable. The conventional fitting method was the first applied and tuned using a closed-form formula, motivating the use of machine learning algorithms. Gaussian process regression, Artificial neural network, and Extreme gradient boosting were the algorithms that were used in predicting the relationship between input variables and the output. The best single model performance was given by GPR with an accuracy of 97.50%, a MAPE of 2.49%, and an R² of 0.99. There were also three models of stacking ensembles that were applied. The stacking ensemble using ANN and XGB as base learners and GPR as the meta-learner offered the best trade-off between its bias and variance and achieved an overall accuracy of 94.54, a MAPE of 5.45, and an R² of 0.98. The sensitivity analysis was employed to assess the significance of input parameters. Shapley additive explanations were also used to give attribution to each case, to attribute the impact of individual input features to each prediction. Among the variables, grinding wheel type 89A180K6V111 and the specific removal rate were the most influential. The framework can be adaptable to other datasets and grinding machining scenarios.",
+    "dataset_url": null
+  },
+  {
+    "slug": "automated-machining",
+    "title": "Exploring New Parameters to Advance Surface Roughness Prediction in Grinding Processes for the Enhancement of Automated Machining",
+    "date": "2024/02/14",
+    "journal": "Journal of Manufacturing and Materials Processing",
+    "authors": [
+      "Mohammadjafar Hadad",
+      "Samareh Attarsharghi",
+      "Mohsen Dehghanpour Abyaneh",
+      "Parviz Narimani",
+      "Javad Makarian",
+      "Alireza Saberi",
+      "Amir Alinaghizadeh"
+    ],
+    "doi": "10.3390/jmmp8010041",
+    "kind": "journal",
+    "volume": "8",
+    "issue": "1",
+    "firstpage": "41",
+    "abstract": "Extensive research in smart manufacturing and industrial grinding has targeted the enhancement of surface roughness for diverse materials including Inconel alloy . Recent studies have concentrated on the development of neural networks, as a subcategory of machine learning techniques, to predict non-linear roughness behavior in relation to various parameters. Nonetheless, this study introduces a novel set of parameters that have previously been unexplored, contributing to the advancement of surface roughness prediction for the grinding of Inconel 738 superalloy considering the effects of dressing and grinding parameters. Hence, the current study encompasses the utilization of a deep artificial neural network to forecast roughness. This implementation leverages an extensive dataset generated in a recent experimental study by the authors. The dataset comprises a multitude of process parameters across diverse conditions, including dressing techniques such as four-edge and single-edge diamond dresser, alongside cooling approaches like minimum quantity lubrication and conventional wet techniques. To evaluate a robust algorithm, a method is devised that involves different networks utilizing various activation functions and neuron sizes to distinguish and select the best architecture for this study . To gauge the accuracy of the methods, mean squared error and absolute accuracy metrics are applied, yielding predictions that fall within acceptable ranges for real-world industrial roughness standards. The model developed in this work has the potential to be integrated with the Industrial Internet of Things to further enhance automated machining.",
+    "dataset_url": null
+  },
+  {
+    "slug": "lpbf-heat-treatment",
+    "title": "Novel Analytical and Machine Learning Framework Predicting LPBF Heat Treatment Effects on Inconel™ 718 Hardness",
+    "date": "2026/04/20",
+    "journal": "Journal of Materials Engineering and Performance",
+    "authors": [
+      "Mohsen Dehghanpour Abyaneh",
+      "Raffaella Sesana",
+      "Mohammad Sadegh Javadi",
+      "Parviz Narimani",
+      "Matteo Crachi",
+      "Antonio Caraviello"
+    ],
+    "doi": "10.1007/s11665-026-13900-4",
+    "kind": "journal",
+    "volume": "35",
+    "issue": "27",
+    "firstpage": "28322",
+    "abstract": "In Laser Powder Bed Fusion, a layer-by-layer melting of metal powder takes place and is specifically suited to high-performance applications in advanced technologies using Inconel™ 718. Vickers hardness (HV20) of the samples was measured as an output variable of the machine learning model after the heat treatment and surface polishing. Particle swarm optimization and genetic algorithm were proposed to define the relationships between the input and output data. The prediction of hardness was then done using five regression models, such as support vector machine, Gaussian process regression (GPR), single-layer and deep-layer artificial neural networks (ANNs), and random tree (RT). A novel technique, rollback, for optimizing output data increased the accuracy metrics. GPR and ANNs performed best in terms of training results. The rollback process was also implemented on the test results. GPR and ANN displayed the best results, with the highest R², NSE, and KGE values between 0.97 and 0.99, and the lowest MAPE, MAE, and RMSE on the testing data, which proved them as the best solutions. The Kruskal–Wallis test and Taylor diagram were also used to evaluate model performance.",
+    "dataset_url": null
+  },
+  {
+    "slug": "steel-grinding",
+    "title": "Predicting Surface Roughness and Grinding Forces in UNS S34700 Steel Grinding: A Machine Learning and Genetic Algorithm Approach to Coolant Effects",
+    "date": "2024/12/03",
+    "journal": "Physchem",
+    "authors": [
+      "Mohsen Dehghanpour Abyaneh",
+      "Parviz Narimani",
+      "Mohammad Sadegh Javadi",
+      "Marzieh Golabchi",
+      "Samareh Attarsharghi",
+      "Mohammadjafar Hadad"
+    ],
+    "doi": "10.3390/physchem4040035",
+    "kind": "journal",
+    "volume": "4",
+    "issue": "4",
+    "firstpage": "495",
+    "abstract": "In today’s tech world of digitalization, engineers are leveraging tools such as artificial intelligence for analyzing data in order to enhance their capability in evaluating product quality effectively . This research study adds value by applying algorithms and various machine learning techniques—such as support vector regression, Gaussian process regression, and artificial neural networks—on a dataset related to the grinding process of UNS S34700 steel. What sets this study apart is its consideration of factors like three types of grinding wheels, four distinct cooling solutions, and seven varied depths of cut. These parameters are assessed for their impact on surface roughness and grinding forces, resulting in the conversion of information into insights. A relational equation with 25 coefficients is developed, using optimized algorithms to predict surface roughness with an 85 percent accuracy and grinding forces with a 90 percent accuracy rate. Learning from machine models like the Gaussian process regression exhibited stability , with an R² value of 0.98 and a mean accuracy of 93 percent. Artificial neural networks achieved an R² value of 0.96, and an accuracy rate of 90 percent. These findings suggest that machine learning techniques are versatile and precise when dealing with datasets. They align well with digitalization and predictive trends. In conclusion; machine learning provides flexibility and superior accuracy for predicting data trends compared to the formulaic approach, which is contained to existing datasets only . The versatility of machine learning highlights its significance in engineering practices for making data-informed decisions.",
+    "dataset_url": null
+  },
+  {
+    "slug": "st37-grinding",
+    "title": "Using machine learning and optimization for controlling surface roughness in grinding of St37",
+    "date": "2023/09",
+    "journal": "Energy Equipment and Systems",
+    "authors": [
+      "Mohsen Dehghanpour Abyaneh",
+      "Parviz Narimani",
+      "Mohammadjafar Hadad",
+      "Samareh Attarsharghi"
+    ],
+    "doi": "",
+    "kind": "journal",
+    "volume": "11",
+    "issue": "3",
+    "firstpage": "321",
+    "abstract": "In the context of the indu strial grinding process, the quality of products is often assessed by the final surface roughness, which is influenced by various parameters in the industrial environment. Previous studies lacked a feasible formulation based on a kinematical and statistical model to explain the uncertainty and non-linearity of grinding conditions, particularly concerning the cooling method, leading to significant discrepancies between the formulated and real results. This study introduces a novel strategy that combines deep learning and optimization to establish a suitable framework. It employs an artificial neural network to simulate and predict surface roughness, considering various dressing and cooling parameters in the industrial grinding of St37 steel alloy. Initially, an analysis of variance (ANOVA) is conducted to determine the correlation between input and output data. Subsequently, a neural network approach with one and two hidden layers, incorporating various activation functions, is employed. Therefore controlling and improving the accuracy of surface roughness predictions in industrial grinding processes can be automated. The mean squared error (MSE) metric is applied to each implementation to identify the best network architecture for the dataset. Upon selecting t he network with the lowest MSE, the final algorithm predicts a set of randomly selected data from the dataset, achieving an overall accuracy of 80%. When compared to the accuracy of the formulated implementation, the neural network approach demonstrates a significantly higher accuracy of up to 30%, surpassing conventional analytical formulation in predicting final surface roughness. These results underscore the considerable potential and feasibility of deep learning approaches for industrial applications.",
+    "dataset_url": null
+  }
+]
