@@ -1,0 +1,302 @@
+/* =========================================================
+   JEWELRY HEADER
+   ========================================================= */
+
+.jewelry-head {
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        0.9fr;
+
+    gap: 60px;
+
+    align-items: end;
+}
+
+
+/* =========================================================
+   HORIZONTAL GALLERY
+   ========================================================= */
+
+.jewelry-scroll {
+    display: flex;
+
+    gap: 16px;
+
+    padding: 35px 0 12px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+}
+
+
+/* =========================================================
+   JEWELRY CARD
+   ========================================================= */
+
+.jewel {
+    position: relative;
+
+    flex:
+        0 0
+        min(72vw, 500px);
+
+    height: 520px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding: 24px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius: 28px;
+
+    background-size: cover;
+
+    scroll-snap-align: start;
+}
+
+
+/* =========================================================
+   CARD GRADIENT OVERLAY
+   ========================================================= */
+
+.jewel::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            #05070bd9
+        );
+}
+
+
+/* Keep Content Above Overlay */
+
+.jewel > * {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.jewel > span {
+    align-self: flex-start;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.jewel h3 {
+    margin: 4px 0;
+
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   CARD CATEGORY
+   ========================================================= */
+
+.jewel small {
+    color: #c3cedd;
+}
+
+
+/* =========================================================
+   CARD 01 — VISUAL IDENTITY
+   ========================================================= */
+
+.j1 {
+    background:
+        radial-gradient(
+            circle at 60% 30%,
+            #e5cda3 0 2%,
+            #7a5c35 7%,
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #24201c,
+            #090a0d 60%
+        );
+}
+
+
+/* =========================================================
+   CARD 02 — PRODUCT STORYTELLING
+   ========================================================= */
+
+.j2 {
+    background:
+        radial-gradient(
+            circle at 45% 38%,
+            #fff1cf 0 2%,
+            #8d7145 8%,
+            transparent 26%
+        ),
+        linear-gradient(
+            135deg,
+            #16191f,
+            #08090c
+        );
+}
+
+
+/* =========================================================
+   CARD 03 — LUXURY CONTENT
+   ========================================================= */
+
+.j3 {
+    background:
+        radial-gradient(
+            circle at 65% 30%,
+            #dcecff 0 2%,
+            #8071a7 8%,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #1b1722,
+            #07080b
+        );
+}
+
+
+/* =========================================================
+   CARD 04 — NAMING & NARRATIVE
+   ========================================================= */
+
+.j4 {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #fff0c5 0 2%,
+            #876e48 8%,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #201d18,
+            #08090b
+        );
+}
+
+
+/* =========================================================
+   GALLERY NOTE
+   ========================================================= */
+
+.jewelry-note {
+    color: #657286;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.jewelry-scroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+
+.jewelry-scroll::-webkit-scrollbar-thumb {
+    background: #ffffff30;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* Stack Header */
+
+    .jewelry-head {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Resize Jewelry Cards */
+
+    .jewel {
+        height: 430px;
+
+        flex-basis: 84vw;
+    }
+}
+
+/* Three-position carousel. Put future photographs in this section's medias folder. */
+.jewelry-carousel { margin-top: 36px; }
+.jewelry-stage { position: relative; height: 440px; overflow: hidden; touch-action: pan-y; border-radius: 22px; }
+.jewelry-stage .jewel { position: absolute; top: 0; left: 50%; width: 31%; height: 100%; margin: 0; border-radius: 20px; cursor: pointer; transition: transform 650ms cubic-bezier(.22,.7,.2,1), filter 650ms ease, opacity 650ms ease; }
+.jewelry-stage .jewel[data-position="center"] { transform: translateX(-50%) scale(1); filter: brightness(1); opacity: 1; z-index: 3; cursor: default; }
+.jewelry-stage .jewel[data-position="left"] { transform: translateX(-158%) scale(.94); filter: brightness(.38); opacity: .85; z-index: 1; }
+.jewelry-stage .jewel[data-position="right"] { transform: translateX(58%) scale(.94); filter: brightness(.38); opacity: .85; z-index: 1; }
+.jewelry-stage .jewel h3 { font-size: clamp(20px,2.5vw,32px); }
+.jewelry-stage .jewel > span { position: absolute; top: 22px; left: 22px; }
+.jewelry-controls { display:flex; align-items:center; justify-content:center; gap:26px; margin-top:22px; }
+.jewelry-controls > button { width:42px; height:42px; border:1px solid var(--line); border-radius:50%; background:#ffffff08; color:var(--text); font:inherit; cursor:pointer; }
+.jewelry-controls > button:hover { background:#ffffff18; }
+.jewelry-dots { display:flex; gap:4px; }
+.jewelry-dots button { display:grid; place-items:center; width:32px; height:32px; padding:0; border:0; background:transparent; cursor:pointer; }
+.jewelry-dots button::after { content:""; width:7px; height:7px; border-radius:50%; background:#ffffff35; transition:background .25s,transform .25s; }
+.jewelry-dots button[aria-pressed="true"]::after { background:var(--cyan); transform:scale(1.3); }
+@media(max-width:700px) {
+ .jewelry-stage { height:360px; }
+ .jewelry-stage .jewel { width:70%; padding:20px; }
+ .jewelry-stage .jewel[data-position="left"] { transform:translateX(-155%) scale(.94); }
+ .jewelry-stage .jewel[data-position="right"] { transform:translateX(55%) scale(.94); }
+}
+
+/* Consistent 3:4 portrait tiles, including on mobile. */
+.jewelry-stage { height:auto; aspect-ratio:75 / 31; }
+.jewelry-stage .jewel { height:auto; aspect-ratio:3 / 4; display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start; padding:20px; background:radial-gradient(ellipse at 50% 40%,#20323c,#0b1017 75%); }
+.jewelry-stage .jewel::before { display:none; }
+.jewelry-stage .jewel img { display:block; width:100%; flex:1; min-height:0; object-fit:contain; }
+.jewelry-stage .jewel h3 { flex:none; margin:16px 0 0; text-align:center; font-size:clamp(16px,2vw,25px); line-height:1.3; }
+.jewelry-description strong { color:var(--text); font-weight:650; }
+@media(max-width:700px) { .jewelry-stage { height:auto; aspect-ratio:15 / 14; } .jewelry-stage .jewel { padding:16px; } }
+
+/* Jewelry introduction and softly illuminated product displays. */
+.jewelry-head { grid-template-columns:1fr; gap:12px; }
+.jewelry-description { max-width:900px; margin:0; }
+.jewelry-stage .jewel { padding:12px 12px 20px; background:#0b1017; }
+.jewel-image { position:relative; display:flex; flex:1; min-height:0; align-items:center; justify-content:center; isolation:isolate; }
+.jewel-image::before { content:""; position:absolute; inset:12% 3%; z-index:-1; background:radial-gradient(ellipse,rgba(237,183,69,.32) 0%,rgba(197,135,31,.15) 38%,transparent 72%); filter:blur(15px); }
+.jewelry-stage .jewel img { width:100%; height:100%; position:absolute; inset:0; object-fit:contain; transform:scale(1.13); }
+.jewelry-stage .jewel h3 { position:relative; margin-top:12px; }
+.jewelry-action { display:flex; justify-content:center; margin-top:26px; }
+.jewelry-learn-more { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 30px; border:1px solid #f3d88e; border-radius:9px; background:linear-gradient(120deg,#b9852e,#f1d181 55%,#c5963e); color:#181208; font-weight:650; text-decoration:none; box-shadow:0 4px 24px #d8ab3d25; transition:box-shadow .25s,transform .25s; }
+.jewelry-learn-more:hover { transform:translateY(-2px); box-shadow:0 5px 30px #d8ab3d50; }
+.jewelry-learn-more:focus-visible { outline:2px solid #ffe8ad; outline-offset:5px; }
