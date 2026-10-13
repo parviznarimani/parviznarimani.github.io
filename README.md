@@ -2,7 +2,7 @@
 
 <img align="right" src="sections/hero/medias/parviznarimani-small.png" alt="Parviz Narimani portrait" width="260">
 
-**Last updated: October 2026 · Website version: 3**
+**Last updated: October 2026 · Website version: 3.3**
 
 **Strategy · Research · Machine Learning · Jewelry**
 
@@ -33,7 +33,7 @@ The portrait beside the title is a plain image. The website’s animated frame a
 | Connect | WhatsApp, Email, LinkedIn, and Download CV |
 | Blog | Six source-linked articles, original covers, and editable post folders |
 
-The publications page contains separate tables for ongoing projects and published papers/preprints. Individual project and paper pages provide dedicated destinations. A custom 404 page offers a return link.
+The publications page contains separate tables for ongoing publications and published papers/preprints. Individual project and paper pages provide dedicated destinations. A custom 404 page offers a return link.
 
 ## Repository structure
 
@@ -72,8 +72,6 @@ Every folder below contains its own README.md with local file inventory and edit
 └── pages/
     ├── blog/                  # Blog post content and build script
     ├── jewelry/
-    │   └── medias/
-    ├── project-1/
     │   └── medias/
     ├── project-2/
     │   └── medias/
@@ -125,9 +123,9 @@ Each project has its own folder under `sections/projects/`: `project1`, `project
 | `projectDescription.txt` | A plain-text description of 25–35 words |
 | `projectProgress.txt` | An integer from `1` to `99`, without a percent sign |
 
-For example, entering `56` displays **56%**. The homepage reads these values on load; rebuilding also updates the static cards and the project names, descriptions, and statuses used in generated project pages and the ongoing-projects table.
+For example, entering `56` displays **56%**. The homepage reads these values on load; rebuilding also updates the static cards and the project names, descriptions, and statuses used in the remaining local project pages.
 
-The build rejects progress values outside 1–99. The description length is an editorial guideline rather than an automatic restriction. Keep progress values representative of the actual project status.
+The build rejects progress values outside 1–100. The description length is an editorial guideline rather than an automatic restriction. Keep progress values representative of the actual project status.
 
 For a fourth project, extend the generator, section template, and corresponding file structure; creating another folder alone does not add a new card.
 
@@ -216,10 +214,10 @@ Born curious. Building with ❤️ since 1991.
 
 The portrait’s dotted Thinking animation adapts the composing/ribbon renderer from [Thinking Orbs by Jakub Antalik](https://github.com/Jakubantalik/thinking-orbs). Its MIT license is included in `assets/licenses/thinking-orbs-LICENSE.txt`.
 
-## Version 3 content guide
+## Version 3.3 content guide
 
 - Current logo and favicon: `parviznarimaniMainLogo70X.png`.
-- Projects: Alvyn® Symbol (70%), Alvyn® Engine (30%), and SkyWings® (10%, Concept).
+- Projects: Alvyn Symbol® (100%, Ready), Alvyn Engine® (30%), and SkyWings® (10%, Concept).
 - CV: `sections/contact/medias/ParvizNarimani_CV.pdf`.
 - Jewelry introduction: `pages/jewelry/jewelryDescription.txt`.
 - Jewelry diagram: `pages/jewelry/digitalTransformation.html`.
@@ -229,3 +227,12 @@ The portrait’s dotted Thinking animation adapts the composing/ribbon renderer 
 Run `python3 pages/blog/build.py` from the website root to build the blog and regenerate the full site sitemap. This delegates to the shared build so other site pages remain listed. The six initial posts are dated October 9, 2026; their source publication dates are distinguished in article text. SVG covers are supported alongside PNG, JPEG, WebP and AVIF.
 
 Blog main text supports paragraphs, **bold**, H2 (`##`) and H3 (`###`) headings. It is not a full Markdown renderer. For detailed publishing instructions, see [the blog README](pages/blog/README.md).
+
+## Version 3.3 updates
+
+- Alvyn Symbol® is Ready at 100%. Its Open Website button links to https://alvynsymbol.github.io/. The former `pages/project-1/` page has been removed; delete that folder from an existing deployment too.
+- Alvyn Engine® and SkyWings® use Know more links. Project progress numbers are smaller.
+- Ongoing publications are independent of homepage projects. Edit `publicationTitle.txt`, `publicationStatus.txt`, and `publicationProgress.txt` in `pages/publications/ongoing/paper1/` through `paper3/`. Progress values are 30%, 10%, and 5%; the third paper is at the Concept stage.
+- Ongoing publication titles are public and have no links or descriptions. Keep unpublished abstracts and manuscripts outside this public repository.
+- `robots.txt` allows general crawlers, Googlebot, Googlebot-Image, Bingbot, OAI-SearchBot, and GPTBot. The build preserves these settings.
+- `sitemap.xml` lists 20 public pages and 8 paper PDFs. It excludes the removed project page, the 404 page, and section fragments. Run `python3 build.py` after changes to regenerate it.
