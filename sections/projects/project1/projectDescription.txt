@@ -1,0 +1,1 @@
+An interpretable symbolic machine learning system for engineering discovery. The project explores mathematical relationships within data, supporting clearer models, deeper understanding and practical insights into complex engineering problems.
