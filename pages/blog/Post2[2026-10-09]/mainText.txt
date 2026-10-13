@@ -1,0 +1,11 @@
+## Equations as evolving candidates
+
+The lecture represents candidate formulas as expression trees. Selection favors promising candidates; crossover exchanges subtrees, and mutation changes parts of an expression.
+
+## Accuracy is not the only objective
+
+Complexity penalties discourage unnecessarily large formulas. The lecture also describes PySR’s search for a balance between error and expression size.
+
+## What to take away
+
+The search process is iterative rather than magical. Its outcome depends on the allowed operations, the data and the objectives used to compare candidates.
