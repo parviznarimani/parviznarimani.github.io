@@ -1,0 +1,11 @@
+## From observations to expressions
+
+Symbolic regression searches for a mathematical expression that fits observations. Instead of choosing a fixed equation and tuning its coefficients, it explores possible structures built from permitted operators and variables.
+
+## Why the formula matters
+
+The ML4Science lecture emphasizes interpretable, compact models. An explicit expression can expose relationships that are harder to inspect in a complex predictor.
+
+## A practical perspective
+
+A useful formula should be treated as a candidate explanation, not automatic proof of a physical law. This distinction matters when translating model output into scientific understanding.
