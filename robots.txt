@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://parviznarimani.github.io/sitemap.xml
