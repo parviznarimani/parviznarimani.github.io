@@ -1,0 +1,11 @@
+## A flying interface
+
+Dante Tezza and Marvin Andujar’s 2019 survey examines interaction between people and multirotor drones. Movement through three-dimensional space makes these encounters different from many interactions with ground-based robots.
+
+## The survey’s scope
+
+The authors discuss human roles, control methods, communication, interaction distance and emerging applications. Their focus extends beyond whether a drone can complete a flight.
+
+## Design implication
+
+The practical question is also whether people can understand and work with it. This post summarizes a historical survey rather than a current inventory of drone technology.
