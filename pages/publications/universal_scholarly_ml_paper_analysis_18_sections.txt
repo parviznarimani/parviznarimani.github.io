@@ -1,0 +1,168 @@
+# Universal Scholarly Paper Analysis Prompt
+## Complete 18-Section Framework for Machine Learning Research
+
+**Purpose:** Analyze the scholarly paper uploaded in this ChatGPT conversation and produce a rigorous, publication-grounded, visually organized research report. This prompt is reusable across engineering, materials science, computational modeling, management, and other research domains, including papers with no machine learning.
+
+**Source boundary:** Use **only the uploaded paper and its supplementary files if explicitly uploaded**. Do **not** activate Deep Research, browse the web, run online searches, consult Google Scholar, retrieve cited publications, or use external databases. Treat the paper as the sole evidence base. Do not assume that a paper cited in its references was read independently.
+
+**Your role:** Act as a senior academic research analyst with expertise in machine learning, ensemble methods, symbolic regression, scientific methodology, and critical reporting. Extract information faithfully; distinguish what the authors *report* from what you *infer*; never invent missing details.
+
+## Global presentation and evidence rules
+
+- Begin with a compact research dashboard containing the paper title, citation metadata, research discipline, total observations, predictor count, target count, ML model count, and reference count. Show **Not reported (NR)** when necessary.
+- Use polished, readable Markdown: concise explanatory paragraphs, appropriately titled tables, clear subsections, equations in LaTeX, and selective charts or diagrams **only when supported by explicit data**. Do not generate decorative or unrelated images.
+- Cite the paper's **section, table, figure, equation, or page number** wherever feasible. Never invent page numbers. When page numbering is unavailable, cite the nearest identifiable heading.
+- Preserve every numerical value, unit, percentage, scientific symbol, model name, and experimental condition exactly as reported. Flag inconsistencies rather than silently correcting them.
+- Separate **training**, **validation**, **cross-validation**, and **testing** results. Separate different targets, datasets, experiments, phases, and folds. Do not merge incomparable results.
+- Use **NR** for not reported, **NA** for not applicable, and **Unclear** for ambiguous reporting; define these abbreviations once.
+- If a requested analysis is unsupported by the paper, say so explicitly and briefly. Do not infer data splits, observations, model settings, rankings, or formulas from common practice.
+- Tables must be compact enough to read; split very wide tables by target, phase, or dataset if needed.
+- Analyze the *entire* paper, including abstract, methods, tables, figures, captions, discussion, conclusions, appendices, and references, before finalizing the report.
+
+---
+
+# REQUIRED REPORT — EXACTLY 18 NUMBERED SECTIONS
+
+## 1. Paper identification and bibliographic metadata
+
+Provide a structured table with: exact title; authors; publication year; journal/conference/repository; volume/issue/pages/article number; DOI if printed; study field; study location or material system; research design; and the stated keywords. Record only metadata appearing in the uploaded document. Include a one-line research classification (e.g., experimental, simulation-based, data-driven, hybrid).
+
+## 2. Executive research brief
+
+Write a **120–180-word** objective summary explaining the problem, why it matters, the proposed approach, the principal findings, and the practical significance. State clearly whether the research is prediction, classification, optimization, explanatory modeling, or a combination. Avoid marketing language and claims beyond the paper.
+
+## 3. Research problem, objectives, questions, and novelty
+
+Identify the practical/scientific problem, knowledge gap, explicit research objectives, research questions or hypotheses (if present), and claimed novelty. Use a table: **Item | Authors' statement or faithful paraphrase | Supporting section | Reporting status**. Distinguish novelty claimed by the authors from novelty independently established (the latter cannot be verified without external research).
+
+## 4. Research design and study phases
+
+Reconstruct the actual study design chronologically. If there are multiple phases, experiments, mixtures, materials, scenarios, or targets, create a **Phase | Purpose | Dataset/subset | Inputs | Outputs | Methods | Evaluation** table. Explain dependencies between phases, such as an earlier model's predicted variable becoming a later model's predictor. Do not invent phases if none are defined.
+
+## 5. Dataset provenance, composition, and observation counts
+
+Provide a detailed dataset table covering: source (experimental, field, simulated, public, synthetic, mixed); collection/simulation method; study population/materials; sampling unit; number of unique observations; number of feature-target records; repeated measurements; dataset groups; training count; validation count; testing count; cross-validation setup; class balance if applicable; and availability statement. **Explicitly distinguish observations from target values, augmented records, samples, and train/test rows.** Reconcile counts only when the paper provides an explanation; otherwise display conflicting reported totals side by side with their locations.
+
+## 6. Input predictors and feature engineering
+
+Create one row per predictor with **Exact variable name | Symbol | Unit | Data type | Range/categories | Physical or business meaning | Source/location**. Explain categorical encoding, normalization/scaling, transformations, derived features, selection/reduction methods, missing-value treatment, and leakage precautions **only if reported**. Distinguish true ML inputs from fixed experimental conditions, outputs, and auxiliary measurements.
+
+## 7. Output targets and prediction tasks
+
+Create one row per target with **Target | Symbol | Unit | Regression/classification/other | Measurement or calculation method | Study phase | Notes**. Describe whether outputs are measured, simulated, inferred, or generated by another model. Where the study has several targets, keep their results distinct. State target ranges and distributions only if given.
+
+## 8. Data preprocessing, partitioning, and validation
+
+Describe the actual preprocessing and evaluation protocol in execution order: cleaning, outlier handling, imputation, encoding, scaling, splitting, randomization, train/validation/test proportions, cross-validation folds, nested CV, tuning and independent testing. Present a **Step | Method | Reported settings | Data affected | Evidence** table. Flag small or unclear test sets, repeated data across partitions, potential leakage, and inconsistent descriptions **as cautions, not proven errors**, unless the paper explicitly establishes them.
+
+## 9. Complete machine-learning workflow
+
+Reconstruct the end-to-end workflow from raw data through final results, including any physical modeling, FEM/CFD/DEM simulation, experimental characterization, feature extraction, model fitting, tuning, benchmarking, explainability, sensitivity analysis, and deployment/interface. Provide a numbered process and a compact text flow diagram (e.g., `Data → Preprocessing → Training → Validation → Testing → Interpretation`). Clearly distinguish ML work from non-ML modeling.
+
+## 10. Comprehensive model inventory and methodological classification
+
+List **every actually implemented model**, not just the best model. Classify by modeling mechanism, allowing multiple tags where justified:
+
+- **Generic/stand-alone ML:** e.g., linear models, SVR/SVM, GPR, KNN, decision trees, standalone ANN/MLP.
+- **Deep learning:** e.g., DNN, CNN, RNN, LSTM, Transformer; identify separately even when grouped with generic ML for comparison.
+- **Ensemble ML:** bagging, random forests, boosting, AdaBoost, gradient boosting, XGBoost, LightGBM, CatBoost, voting, etc.
+- **Stacking/blending:** explicit base learners, meta-learner, out-of-fold strategy, and architecture.
+- **Symbolic ML:** symbolic regression, genetic programming, gene expression programming, PySR, GPTIPS, equation discovery, formula-based learning.
+- **Other/hybrid:** physics-informed ML, optimization-assisted ML, transfer learning, or other methods actually used.
+
+Use **Model | Full name | Category | Role | Predicted target(s) | Phase(s) | Implemented? | Evidence**. Do not classify a model as implemented merely because it appears in the literature review. Avoid labeling all neural networks as ensembles or all equations as symbolic regression.
+
+## 11. Model architectures, hyperparameters, and optimization
+
+For each implemented model extract: kernel/loss, architecture, number of layers/neurons/trees, activation, optimizer, regularization, learning rate, population/iterations, search space, parameter selection method, stopping criteria, random seed, software/library/version, and hardware **where reported**. Present a model-specific table with **Hyperparameter | Value | Optimization method | Source**. Distinguish default settings from optimized settings. Never invent configurations or fill gaps from typical software defaults.
+
+## 12. Model performance metrics and complete results
+
+Build comprehensive comparison tables, preferably **one per target and phase**, including all available metrics: R², adjusted R², RMSE, MAE, MSE, MAPE, accuracy, precision, recall, F1, AUC, PCC, RMSD, NSE, bias, and any custom indices defined in the paper. Include **Dataset/split | Model | Target | Metric values | Units | Source**. Define uncommon metrics and indicate whether higher or lower is better. Preserve reported precision and explain whether an 'accuracy' percentage is a classification metric or an author-defined regression score. If numerical metrics are only shown graphically, describe trends rather than fabricate exact values.
+
+## 13. Model comparison, ranking, robustness, and interpretation
+
+Compare models **separately by metric, target, phase, and data split**. Identify the best test R², lowest test RMSE, lowest MAPE, and other metric leaders without asserting a universal winner when leaders differ. Compare generic, deep, ensemble/stacking, and symbolic groups where implemented. Report uncertainty, confidence intervals, repeated runs, statistical tests, overfitting evidence, generalization gaps, and robustness analyses only if provided. Distinguish the authors' preferred model from a metric-specific best performer and explain discrepancies.
+
+## 14. Dedicated symbolic ML and equation-discovery analysis
+
+**This section is mandatory even when symbolic ML is absent.** If not used, state **“Symbolic ML was not implemented in this study”** and give a short NR/NA table; do not manufacture formulas.
+
+If symbolic ML is implemented, extract in depth:
+
+1. Exact method/software (e.g., PySR, GPTIPS, GEP, custom symbolic engine).
+2. Search objective, loss/fitness function, complexity penalties, Pareto criteria, and selection strategy.
+3. Operator set (e.g., `+`, `−`, `×`, `÷`, `sin`, `cos`, `log`, `exp`), constraints, constants, and dimensional treatment.
+4. Population size, generations/iterations, maximum expression size/depth, mutation/crossover settings, stopping criteria, and random seeds.
+5. **Every final selected equation** reproduced faithfully in LaTeX, with coefficients, units, variable definitions, and equation numbers where supplied.
+6. Training and testing metrics for symbolic equations, by target and phase.
+7. Accuracy–complexity–interpretability trade-offs versus generic and ensemble models.
+8. Physical plausibility, domain limitations, extrapolation behavior, and interpretability **as supported by the paper**.
+
+Provide **Equation/Model | Inputs | Target | Operators | Complexity | Test metrics | Interpretation | Source**. Do not treat conventional regression equations, governing physics equations, or an equation cited from another paper as newly discovered symbolic ML models.
+
+## 15. Explainability, sensitivity analysis, and scientific insights
+
+Extract all interpretability methods (SHAP, permutation importance, PDP, ALE, LIME, sensitivity tests, ablation, ANOVA, feature importance, Taylor diagrams, residual plots, or physical interpretation). Explain what each analysis actually shows, identifying influential predictors, directionality, interactions, and engineering/business implications only when demonstrated. Use **Method | Inputs assessed | Finding | Quantitative evidence | Figure/table**. Distinguish feature importance from causal effects.
+
+## 16. Literature review and prior-study comparison
+
+Identify papers **substantively discussed** in the introduction, background, related work, and discussion. Create a table with **Reference no. | Authors/year | Topic | Data/materials | ML models | Predictors | Targets | Main reported finding | Relation to current study**. If the current paper does not report an earlier study's dataset, model, or metrics, write NR; do not retrieve or reconstruct those publications. Distinguish **background citation**, **methodological citation**, **direct comparator**, and **substantive literature-review study**. Summarize recurring methods, gaps, and how the authors position their contribution. If many papers are substantively discussed, include all that can be supported; do not arbitrarily stop at 10 or 15.
+
+## 17. Reference bibliography audit and citation counts
+
+Count **all distinct numbered or otherwise identifiable entries in the actual reference list**, not merely in-text citations. Report: total reference entries; range of reference numbers (if numbered); number of substantive prior studies identified in Section 16; and number of references used as direct comparisons where reliably distinguishable. If feasible from the printed references, categorize them into ML, domain engineering, modeling, sustainability, standards/software, and other, while acknowledging overlapping categories. Do not infer reference counts from the highest number without checking for omissions/duplicates. Note incomplete, duplicate, or inconsistent entries only when verifiable in the uploaded paper. Provide the **counting method**.
+
+## 18. Conclusions, contributions, limitations, data-quality audit, and research snapshot
+
+End with four clearly labeled subsections:
+
+**A. Authors' conclusions and achievements:** A table with **Claimed achievement | Numerical or qualitative evidence | Model/phase | Source**. Include practical deployment, software/UI, sustainability or economic implications if actually reported.
+
+**B. Limitations and future research:** Separate limitations explicitly acknowledged by authors from additional *analysis cautions* suggested by the reporting. Do not misrepresent your cautions as author claims.
+
+**C. Data Quality & Reporting Notes:** Flag conflicting observation counts, inconsistent metrics, missing units, mismatched table/figure descriptions, absent hyperparameters, ambiguous splits, or unsupported conclusions. For each, give **Issue | Reported statements/values | Locations | Why it matters | Resolution status**. Do not silently fix discrepancies.
+
+**D. Final compact research snapshot:** One visually clean summary table with bibliographic identifier, objective, data source, observation count(s), predictor names, target names, generic models, deep models, ensemble models, stacking models, symbolic models, best test performers by metric, symbolic equations (if any), key findings, limitations, number of substantively reviewed studies, and total references.
+
+---
+
+# POSITIVE PROMPT — REQUIRED BEHAVIOR
+
+1. **Read the entire uploaded scholarly paper carefully**, including numerical tables, figure captions, appendices, conclusions, and reference list.
+2. **Be source-faithful and technically precise.** Preserve the authors' actual methodology and terminology while explaining it clearly.
+3. **Extract every implemented ML model** and correctly distinguish generic, deep, ensemble, stacking, symbolic, and hybrid approaches.
+4. **Prioritize symbolic ML details whenever present**, especially final formulas, search operators, fitness criteria, population/iteration settings, accuracy, complexity, and interpretability.
+5. **Report all available model metrics** with correct training/test distinctions and target/phase labels.
+6. **Provide exact dataset accounting**, including discrepancies in reported observations and data partitions.
+7. **Create readable, aesthetically organized tables** with concise column names, consistent units, and bold emphasis for defensible best results.
+8. **Use charts selectively** for numerical model comparisons when the source contains adequate explicit values; charts must not replace data tables.
+9. **Distinguish paper claims, source facts, and your analytical cautions**. Attribute findings to specific sections, tables, figures, or equations.
+10. **Analyze the actual bibliography and literature discussion**, count references, and clearly separate prior work from methods implemented in this paper.
+11. **Explain scientific significance and limitations** without overstatement.
+12. **Always output all 18 numbered sections in order**, even if some must contain a concise NR/NA statement.
+
+# NEGATIVE PROMPT — PROHIBITED BEHAVIOR
+
+1. **DO NOT use Deep Research.** Do not initiate a Deep Research workflow under any circumstance for this task.
+2. **DO NOT search the web or browse external websites.** No Google, Google Scholar, Crossref, Semantic Scholar, Scopus, Web of Science, publisher pages, GitHub, DOI resolution, or external APIs.
+3. **DO NOT retrieve, read, or summarize cited papers independently.** Discuss them solely as represented in the uploaded paper.
+4. **DO NOT invent data, numbers, sample sizes, equations, hyperparameters, citations, software versions, or model results.**
+5. **DO NOT infer exact numerical values from plotted figures** unless the paper prints those values. Describe graphical trends qualitatively.
+6. **DO NOT silently resolve contradictions** between abstract, methods, tables, results, and conclusions. Flag each contradiction with its source location.
+7. **DO NOT confuse literature-review methods with implemented methods.** A reference to symbolic regression or XGBoost does not prove it was used.
+8. **DO NOT conflate generic ML, deep learning, ensemble, stacking, and symbolic ML.** Use methodologically justified classifications.
+9. **DO NOT claim one model is universally best** when different metrics or targets favor different models.
+10. **DO NOT mix training, validation, cross-validation, and testing metrics**, or merge different targets, phases, or datasets.
+11. **DO NOT convert units, round values, or reinterpret custom accuracy metrics** without clear labeling and mathematical justification.
+12. **DO NOT assume unreported preprocessing, random splits, cross-validation, software defaults, or statistical tests.**
+13. **DO NOT fabricate symbolic equations** or present governing equations as newly discovered symbolic models.
+14. **DO NOT omit negative findings, limitations, uncertainty, or absent methods** merely to make the report look more impressive.
+15. **DO NOT add decorative images, irrelevant examples, unsupported diagrams, or generic textbook explanations** that distract from the actual study.
+16. **DO NOT treat the number of references as the number of studies substantively reviewed.** Count and label these separately.
+17. **DO NOT shorten, merge, reorder, or omit any of the 18 required report sections.**
+18. **DO NOT ask the user for permission to begin or propose external verification.** Analyze the uploaded document immediately with the evidence available.
+
+# FINAL EXECUTION INSTRUCTION
+
+Analyze the uploaded paper now and produce the complete **18-section research report** in the exact order specified above. Begin with the compact research dashboard, use precise Markdown tables throughout, devote special attention to all ML implementations and symbolic ML (if present), provide model-by-model metrics and bibliographic counts, and finish with the data-quality audit and research snapshot. Stay entirely within the uploaded document. When information is unavailable, write **NR**, **NA**, or **Unclear** instead of guessing.
